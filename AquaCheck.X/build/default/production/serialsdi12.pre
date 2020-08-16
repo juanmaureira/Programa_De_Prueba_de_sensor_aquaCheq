@@ -1,0 +1,77 @@
+
+# 1 "serialsdi12.c"
+
+# 13
+int cont=0;
+extern char buffer[MAXBUFFERSIZE];
+
+# 19
+void TranByte(char cmd){
+int i, cont=0;
+char temp;
+
+
+
+
+temp=cmd;
+
+for(i=0;i<7;i++){
+
+
+}
+
+if(cont%2==0)
+
+
+
+
+__delay_us(DELAY);
+
+
+__delay_us(DELAY);
+
+for(i=0;i<7;i++){
+if(cmd&0x01)
+
+# 50
+__delay_us(DELAY);
+}
+
+__delay_us(DELAY);
+
+__delay_us(DELAY);
+}
+
+# 61
+void PutStrSerial(char *string){
+for(;*string!='\0';string++)
+TranByte(*string);
+}
+
+# 70
+char GetStrSerial(void){
+unsigned char cmd=0;
+unsigned int i;
+unsigned int idx = 0;
+long int cont=0;
+
+# 81
+while( cmd != 0x0a && idx<MAXBUFFERSIZE) {
+
+# 102
+}
+return cmd;
+}
+
+void MuestraSegundo(int *sec, int *samp){
+int i;
+char str[4];
+
+
+
+for(i=0;i<3;i++)
+str[i] = buffer[i+1];
+
+
+
+}

@@ -1,0 +1,1 @@
+ build/default/production/comun.d  build/default/production/comun.p1:  comun.c SDI12.c serialsdi12.c
